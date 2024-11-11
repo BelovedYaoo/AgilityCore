@@ -50,7 +50,7 @@ public class Result {
     /**
      * 返回数据缓存
      */
-    @JsonIgnore
+    @Getter(onMethod_ = @JsonIgnore)
     private Map<String, Object> dataCache = new HashMap<>();
 
     /**

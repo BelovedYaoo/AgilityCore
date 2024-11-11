@@ -33,12 +33,12 @@ public abstract class BaseController<T extends BaseFiled> {
     /**
      * 基础Mapper
      */
-    private final BaseMapper<T> baseMapper;
+    public final BaseMapper<T> baseMapper;
 
     /**
      * 事务管理器
      */
-    private final PlatformTransactionManager platformTransactionManager;
+    public final PlatformTransactionManager platformTransactionManager;
 
     /**
      * 快速获取泛型的类型的方法
