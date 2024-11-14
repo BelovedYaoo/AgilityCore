@@ -32,7 +32,7 @@ import java.util.Date;
  * Accessors用于去除Getter、Setter前缀并开启链式调用，使Getter、Setter返回当前对象
  *
  * @author BelovedYaoo
- * @version 1.7
+ * @version 1.8
  */
 @Data
 @SuperBuilder
@@ -55,7 +55,7 @@ public abstract class BaseFiled implements Serializable {
     @Index(type = IndexTypeEnum.UNIQUE)
     @ColumnType(value = MysqlTypeConstant.VARCHAR, length = 32)
     @InsertFillData(BaseIdAutoFillProcessor.class)
-    protected String baseId;
+    private String baseId;
 
     /**
      * 数据排序
@@ -63,7 +63,7 @@ public abstract class BaseFiled implements Serializable {
     @Column()
     @ColumnComment("数据序号，用于数据排序")
     @ColumnType(value = MysqlTypeConstant.INT)
-    protected Integer orderNum;
+    private Integer orderNum;
 
     /**
      * 创建时间
@@ -72,7 +72,7 @@ public abstract class BaseFiled implements Serializable {
     @ColumnType(value = MysqlTypeConstant.DATETIME, length = 3)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @InsertFillTime
-    protected Date createTime;
+    private Date createTime;
 
     /**
      * 更新时间
@@ -81,7 +81,7 @@ public abstract class BaseFiled implements Serializable {
     @ColumnType(value = MysqlTypeConstant.DATETIME, length = 3)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @InsertUpdateFillTime
-    protected Date updateTime;
+    private Date updateTime;
 
     /**
      * 禁用状态
@@ -89,7 +89,7 @@ public abstract class BaseFiled implements Serializable {
     @ColumnComment("不为NULL的情况表示数据的禁用时间")
     @ColumnType(value = MysqlTypeConstant.DATETIME, length = 3)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    protected Date disabledAt;
+    private Date disabledAt;
 
     /**
      * 逻辑删除
@@ -98,7 +98,7 @@ public abstract class BaseFiled implements Serializable {
     @ColumnComment("不为NULL的情况表示数据的删除时间")
     @ColumnType(value = MysqlTypeConstant.DATETIME, length = 3)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    protected Date deletedAt;
+    private Date deletedAt;
 
     /**
      * 派生类方法在调用基类Setter时会传递基类类型对象<p>
